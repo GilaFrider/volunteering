@@ -2,9 +2,10 @@ import connectDB from "./DB";
 class BaseRepo{
     constructor(model){
             this.model = model;
+            connectDB();
     }
-    connectDB();
 
+   
     async getAll() {
         return this.model.find({}).exec();
     }
