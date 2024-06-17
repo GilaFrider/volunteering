@@ -1,10 +1,15 @@
+// Require Mongoose
 import mongoose from "mongoose";
 
+// Define a schema
 const Schema = mongoose.Schema;
 
-const FieldSchema = new Schema({
-    name: String,
+const StudentSchema = new Schema({
+    name: String
 });
 
-const FieldModel = mongoose.model("fields", FieldSchema);
+
+// Compile model from schema
+const FieldModel = mongoose.model("fields", StudentSchema);
+
 export default FieldModel;
