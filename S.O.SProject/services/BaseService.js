@@ -5,24 +5,10 @@ class BaseService {
 
     async getAll() {
         return this.repo.getAll();
-        // try {
-        //   const response = await this.service.getList(req.query);
-        //   return res.status(response.statusCode).json(response);
-        // }
-        // catch (e) {
-        //   next(e);
-        // }
       }
     
       async get(id) {
-        // const { id } = req.params;
-        // try {
-        //   const response = await this.service.getById(id);
-        //   return res.status(response.statusCode).json(response);
-        // }
-        // catch (e) {
-        //   next(e);
-        // }
+        return this.repo.get(id);
       }
     
       async insert(data) {

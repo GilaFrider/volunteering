@@ -5,10 +5,10 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const AddressSchema = new Schema({
-    //id : Int32Array,
+    id : Number,
     city : String,
     street : String,
-    //numOfBuild: Int32Array
+    numOfBuild: Number
 });
 
 
