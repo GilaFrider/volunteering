@@ -6,6 +6,7 @@ import  express  from 'express';
 const app = express();
 
 import FieldsRouter from './routers/FieldsRouter.js';
+import AddressRouter from './routers/AddressesRouter.js';
 
 
 const hostname = process.env.HOST_NAME;//'127.0.0.1';//localhost
@@ -14,7 +15,8 @@ const port = process.env.PORT;
 app.use(express.json());//will extract data from body - so we don't ned to register to 'data' and 'end' events
 
 
-app.use('/api/fields', FieldsRouter);
+//app.use('/api/fields', FieldsRouter);
+app.use('/api/addresses', AddressRouter);
 
 app.use('/', (req, res) => {
     res.send('welcome to our api');

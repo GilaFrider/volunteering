@@ -1,14 +1,47 @@
-import connectDB from "./DB";
-class BaseRepo{
-    constructor(model){
-            this.model = model;
-            connectDB();
+import connect from './DB';
+class BaseRepo {
+    constructor(model) {
+        this.model = model;
+        //autoBind(this);
+        connect();
     }
 
-   
-    async getAll() {
+    async getAll(query) {
         return this.model.find({}).exec();
+        //return Promise.resolve('hello world');
+        // let { skip, limit, sortBy } = query;
+
+        // skip = skip ? Number(skip) : 0;
+        // limit = limit ? Number(limit) : 10;
+        // sortBy = sortBy ? sortBy : { createdAt: -1 };
+
+        // delete query.skip;
+        // delete query.limit;
+        // delete query.sortBy;
+
+        // if (query._id) {
+        //     try {
+        //         query._id = new mongoose.mongo.ObjectId(query._id);
+        //     } catch (error) {
+        //         throw new Error('Not able to generate mongoose id with content');
+        //     }
+        // }
+
+        // try {
+        //     let items = await this.model
+        //         .find(query)
+        //         .sort(sortBy)
+        //         .skip(skip)
+        //         .limit(limit);
+
+        //     let total = await this.model.countDocuments(query);
+
+        //     return new HttpResponse(items, { totalCount: total });
+        // } catch (errors) {
+        //     throw errors;
+        // }
     }
+
 
     async get(id) {
         try {
@@ -24,6 +57,7 @@ class BaseRepo{
             throw errors;
         }
     }
+
     async insert(data) {
         try {
             let item = await this.model.create(data);
@@ -60,6 +94,7 @@ class BaseRepo{
             throw errors;
         }
     }
-
 }
+
+//module.exports = BaseRepo;
 export default BaseRepo;
