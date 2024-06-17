@@ -1,4 +1,4 @@
-import connect from './DB';
+import connect from './DB.js';
 class BaseRepo {
     constructor(model) {
         this.model = model;

@@ -1,5 +1,5 @@
-import AddressModel from "../models/AddressModel";
-import BaseRepo from "./BaseRepo";
+import AddressModel from "../models/AddressModel.js";
+import BaseRepo from "./BaseRepo.js";
 class AddressRepo extends BaseRepo {
     constructor(model) {
         super(model);

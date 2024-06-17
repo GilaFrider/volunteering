@@ -1,5 +1,5 @@
-import Need_helpModel from "../models/Need_helpModel";
-import BaseRepo from "./BaseRepo";
+import Need_helpModel from '../models/Need_helpModel.js'
+import BaseRepo from "./BaseRepo.js";
 class Need_helpRepo extends BaseRepo {
     constructor(model) {
         super(model);

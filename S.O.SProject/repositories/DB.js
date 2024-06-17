@@ -1,6 +1,6 @@
-import mongoose, { Mongoose } from "mongoose";
+import mongoose from "mongoose";
 
-Mongoose.set("strictQuery",false);
+mongoose.set("strictQuery",false);
 
 
 export default async function connectDB(){
