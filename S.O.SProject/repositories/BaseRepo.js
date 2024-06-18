@@ -16,6 +16,7 @@ class BaseRepo {
         try {
             let item = await this.model.findById(id)
             console.log(item);
+
             if (!item) {
                 let error = new Error('Item not found');
                 error.statusCode = 404;
