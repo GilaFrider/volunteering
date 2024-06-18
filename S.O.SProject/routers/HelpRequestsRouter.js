@@ -9,13 +9,13 @@ import controller from '../controllers/HelpRequestController.js';
 
 router.get('/', controller.getAll);
 
-router.get('/:id', controller.get);
+router.get('/:_id', controller.get);
 
 router.post('/', controller.insert);
 
-router.put('/:id', controller.update);
+router.put('/:_id', controller.update);
 
-router.delete('/:id', controller.delete);
+router.delete('/:_id', controller.delete);
 
 
 export default router;

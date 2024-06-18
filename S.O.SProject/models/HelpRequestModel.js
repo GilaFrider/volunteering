@@ -7,6 +7,7 @@ const Schema = mongoose.Schema;
 const HelpRequestSchema = new Schema({
     _id:Number,
     familyName: String,
+    status:Boolean,
     addressId:Number,
     fieldName:String,
     numOfHours:Number,

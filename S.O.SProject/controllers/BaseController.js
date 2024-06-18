@@ -18,9 +18,10 @@ class BaseController {
     }
 
     async get(req, res, next) {
-        const { id } = req.params;
+      
         try {
-            const response = await this.service.getById(id);
+            const  id  = req.params._id;
+            const response = await this.service.get(id);
             return res.status(response.statusCode).json(response);
         }
         catch (e) {
