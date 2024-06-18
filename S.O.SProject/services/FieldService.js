@@ -4,7 +4,8 @@ class FieldService extends BaseService {
     constructor(repo) {
         super(repo);
     }
+    
 }
 
-//module.exports = new StudentService(repo);
+
 export default new FieldService(repo);

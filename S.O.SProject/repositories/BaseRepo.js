@@ -1,5 +1,4 @@
 import connect from './DB.js';
-import { HttpResponse } from '../HttpResponse.js';
 
 class BaseRepo {
     constructor(model) {
@@ -34,7 +33,7 @@ class BaseRepo {
         try {
             let item = await this.model.create(data);
             if (item) {
-                return new HttpResponse(item);
+                return item;
             } else {
                 throw new Error('Something wrong happened');
             }
@@ -46,7 +45,7 @@ class BaseRepo {
     async update(id, data) {
         try {
             let item = await this.model.findByIdAndUpdate(id, data, { new: true });
-            return new HttpResponse(item);
+            return item;
         } catch (errors) {
             throw errors;
         }
@@ -60,7 +59,7 @@ class BaseRepo {
                 error.statusCode = 404;
                 throw error;
             } else {
-                return new HttpResponse(item, { deleted: true });
+                return item;
             }
         } catch (errors) {
             throw errors;
