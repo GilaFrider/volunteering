@@ -1,9 +1,10 @@
 import mongoose from "mongoose";
-
+import { configDotenv } from "dotenv";
+configDotenv();
 mongoose.set("strictQuery",false);
 
 
 export default async function connectDB(){
-    await mongoose.connect("mongodb+srv://g0548457103:tLe5WxN9ge8UAOH9@volunteeringinthecommun.uqm5tby.mongodb.net/");
+    await mongoose.connect(process.env.CONN_STRING);
         console.log("Connected to DB");
 }
