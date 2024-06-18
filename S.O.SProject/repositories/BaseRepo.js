@@ -1,4 +1,5 @@
 import connect from './DB.js';
+import { HttpResponse } from '../HttpResponse.js';
 
 class BaseRepo {
     constructor(model) {
@@ -23,7 +24,7 @@ class BaseRepo {
                 throw error;
             }
 
-            return new HttpResponse(item);
+            return item;
         } catch (errors) {
             throw errors;
         }

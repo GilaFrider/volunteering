@@ -22,7 +22,7 @@ class BaseController {
         try {
             const  id  = req.params._id;
             const response = await this.service.get(id);
-            return res.status(response.statusCode).json(response);
+            return res.status(200).json(response);
         }
         catch (e) {
             next(e);
@@ -32,7 +32,7 @@ class BaseController {
     async insert(req, res, next) {
         try {
             const response = await this.service.insert(req.body);
-            return res.status(response.statusCode).json(response);
+            return res.status(200).json(response);
         }
         catch (e) {
             next(e);
@@ -43,7 +43,7 @@ class BaseController {
         const { id } = req.params;
         try {
             const response = await this.service.update(id, req.body);
-            return res.status(response.statusCode).json(response);
+            return res.status(200).json(response);
         }
         catch (e) {
             next(e);
@@ -54,7 +54,7 @@ class BaseController {
         const { id } = req.params;
         try {
             const response = await this.service.delete(id);
-            return res.status(response.statusCode).json(response);
+            return res.status(200).json(response);
         }
         catch (e) {
             next(e);
