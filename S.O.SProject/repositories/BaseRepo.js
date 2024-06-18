@@ -67,5 +67,4 @@ class BaseRepo {
     }
 }
 
-//module.exports = BaseRepo;
 export default BaseRepo;

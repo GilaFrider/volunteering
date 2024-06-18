@@ -11,7 +11,8 @@ const HelpRequestSchema = new Schema({
     addressId:Number,
     fieldName:String,
     numOfHours:Number,
-    email:String
+    email:String,
+    VolunteerId:String
 });
 
 
