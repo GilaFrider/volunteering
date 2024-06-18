@@ -1,10 +1,10 @@
 import BaseController from './BaseController.js';
-import service from '../services/HelpRequestsService.js';
+import HelpRequestsService from '../services/HelpRequestsService.js';
 
 class HelpRequestService extends BaseController {
-    constructor(service) {
-        super(service);        
+    constructor(HelpRequestsService) {
+        super(HelpRequestsService);        
     }
 }
 
-export default new HelpRequestService(service);
+export default new HelpRequestService(HelpRequestsService);
