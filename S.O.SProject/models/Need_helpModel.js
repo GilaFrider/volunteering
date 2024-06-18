@@ -9,7 +9,6 @@ const Need_helpSchema = new Schema({
 });
 
 
-// Compile model from schema
-const Need_helpModel = mongoose.model("Needs_help", Need_helpSchema);
+const Need_helpModel = mongoose.model("Needs_help", Need_helpSchema,"Needs_help");
 
 export default Need_helpModel;
