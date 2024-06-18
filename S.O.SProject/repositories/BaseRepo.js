@@ -13,7 +13,7 @@ class BaseRepo {
 
 
     async get(id) {
-        try {
+        try { 
             let item = await this.model.findById(id);
             if (!item) {
                 let error = new Error('Item not found');
