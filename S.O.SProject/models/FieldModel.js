@@ -10,6 +10,6 @@ const FieldSchema = new Schema({
 
 
 // Compile model from schema
-const FieldModel = mongoose.model("fields", FieldSchema, 'fields');
+const FieldModel = mongoose.model("fields", FieldSchema);
 
 export default FieldModel;

@@ -1,6 +1,6 @@
 import express from 'express';
 const router = express.Router();
-import controller from '../controllers/Needs_helpController.js';
+import controller from '../controllers/HelpRequestController.js';
 
 
 
