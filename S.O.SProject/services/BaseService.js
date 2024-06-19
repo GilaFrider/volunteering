@@ -12,38 +12,16 @@ class BaseService {
       }
     
       async insert(data) {
-        // try {
-        //   const response = await this.service.insert(req.body);
-        //   return res.status(response.statusCode).json(response);
-        // }
-        // catch (e) {
-        //   next(e);
-        // }
+        return this.repo.insert(data);
       }
     
       async update(id, data) {
-        // const { id } = req.params;
-        // try {
-        //   const response = await this.service.update(id, req.body);
-        //   return res.status(response.statusCode).json(response);
-        // }
-        // catch (e) {
-        //   next(e);
-        // }
+        return this.repo.update(id, data)
       }
     
       async delete(id) {
-        // const { id } = req.params;
-        // try {
-        //   const response = await this.service.delete(id);
-        //   return res.status(response.statusCode).json(response);
-        // }
-        // catch (e) {
-        //   next(e);
-        // }
+        return this.repo.delete(id);
       }
 
 }
-
-//module.exports = BaseService;
 export default BaseService;

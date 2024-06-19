@@ -7,7 +7,6 @@ class BaseRepo {
     }
 
     async getAll() {
-        
         return this.model.find();
     }
 

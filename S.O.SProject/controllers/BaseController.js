@@ -9,7 +9,6 @@ class BaseController {
     async getAll(req, res, next) {
         try {
             const response = await this.service.getAll(req.query);
-            //to do  - status code accoring to result
             return res.status(200).json(response);
         }
         catch (e) {
@@ -18,7 +17,6 @@ class BaseController {
     }
 
     async get(req, res, next) {
-      
         try {
             const  id  = req.params._id;
             const response = await this.service.get(id);
@@ -40,8 +38,8 @@ class BaseController {
     }
 
     async update(req, res, next) {
-        const { id } = req.params;
         try {
+            const id  = req.params._id;
             const response = await this.service.update(id, req.body);
             return res.status(200).json(response);
         }
@@ -51,8 +49,8 @@ class BaseController {
     }
 
     async delete(req, res, next) {
-        const { id } = req.params;
         try {
+            const id  = req.params._id;
             const response = await this.service.delete(id);
             return res.status(200).json(response);
         }

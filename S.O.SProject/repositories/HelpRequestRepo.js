@@ -7,8 +7,14 @@ class HelpRequestRepo extends BaseRepo {
         super(model);
     }
 
-    async getAll() {
+    async getAll(params) {
         const pipeline = buildPipeline();
+        if(params.fieldName){
+            pipeline.push({ $match: { fieldName: params.fieldName } }); 
+        }
+        if(params.city){
+        console.log(params.city);
+        }
         return await this.model.aggregate(pipeline).exec();
     }
 }
